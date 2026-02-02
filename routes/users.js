@@ -16,5 +16,11 @@ router.post('/create', async (req, res) => {
   }
 })
 
-
+//READ
+router.get('/', (req, res) => {
+  res.json({
+    message: 'API de usuarios funcionando ✅',
+    users: [] // aquí podrías devolver tus usuarios reales más adelante
+  });
+});
 module.exports = router;
