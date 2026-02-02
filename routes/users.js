@@ -17,10 +17,14 @@ router.post('/create', async (req, res) => {
 })
 
 //READ
-router.get('/', (req, res) => {
-  res.json({
-    message: 'API de usuarios funcionando correctamente',
-    users: []
-  });
-});
+router.get('/', async (req, res) => {
+  try {
+    const users = await User.find()
+    res.json(users)
+  } catch (error) {
+    console.error(error)
+    res.status(500).json({ message: 'Error fetching users' })
+  }
+})
+
 module.exports = router;
