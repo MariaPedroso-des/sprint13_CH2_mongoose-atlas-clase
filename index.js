@@ -11,7 +11,7 @@ app.use(express.urlencoded({ extended: true }))
 
 app.use('/', routes)
 
-app.use('/users', Users)
+app.use('/', Users)
 
 dbConnection()
 
